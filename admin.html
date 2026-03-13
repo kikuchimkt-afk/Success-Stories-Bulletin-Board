@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投稿一覧 | 合格おめでとう掲示板 — 管理ページ</title>
+  <meta name="description" content="合格体験記の投稿を一覧表示・管理するページです。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 桜の花びらアニメーション -->
+  <div class="sakura-container" id="sakuraContainer"></div>
+
+  <!-- ヘッダー -->
+  <header class="page-header fade-in">
+    <div class="page-header__badge">📋 管理ページ</div>
+    <h1 class="page-header__title">合格体験記 一覧</h1>
+    <p class="page-header__subtitle">生徒たちの輝かしい合格ストーリー</p>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main-container main-container--wide">
+
+    <!-- 統計カード -->
+    <div class="admin-stats fade-in" id="statsSection">
+      <div class="stat-card">
+        <div class="stat-card__value" id="totalCount">0</div>
+        <div class="stat-card__label">総投稿数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__value" id="highschoolCount">0</div>
+        <div class="stat-card__label">高校受験</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__value" id="universityCount">0</div>
+        <div class="stat-card__label">大学受験</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__value" id="avgRating">-</div>
+        <div class="stat-card__label">平均おすすめ度</div>
+      </div>
+    </div>
+
+    <!-- フィルター -->
+    <div class="glass-card fade-in" style="padding: 20px 24px; margin-bottom: 24px;">
+      <div class="admin-toolbar">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="highschool">🏫 高校受験</button>
+        <button class="filter-btn" data-filter="university">🎓 大学受験</button>
+        <select class="form-select" id="yearFilter" style="width: auto; padding: 8px 36px 8px 14px; font-size: 0.85rem; border-radius: 100px;">
+          <option value="all">全年度</option>
+          <option value="2026">2026年度</option>
+          <option value="2025">2025年度</option>
+          <option value="2024">2024年度</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 投稿カード一覧 -->
+    <div class="stories-grid" id="storiesGrid">
+      <!-- JS で動的に生成 -->
+    </div>
+
+    <!-- 空の状態 -->
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <div class="empty-state__icon">🌸</div>
+      <p class="empty-state__text">
+        まだ投稿がありません。<br>
+        生徒たちの合格体験記を待ちましょう！
+      </p>
+    </div>
+
+  </main>
+
+  <!-- 削除確認ダイアログ -->
+  <div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-box">
+      <p class="confirm-box__text">この投稿を削除しますか？<br>この操作は元に戻せません。</p>
+      <div class="confirm-box__actions">
+        <button class="btn-confirm-cancel" id="confirmCancel">キャンセル</button>
+        <button class="btn-confirm-ok" id="confirmOk">削除する</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>© 2026 合格おめでとう掲示板 — 管理ページ</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

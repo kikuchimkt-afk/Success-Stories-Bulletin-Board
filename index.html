@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合格体験記を投稿する | 合格おめでとう掲示板</title>
+  <meta name="description" content="あなたの合格体験談を投稿して、後輩たちに勇気を届けよう！高校受験・大学受験の合格ストーリーをお待ちしています。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 桜の花びらアニメーション -->
+  <div class="sakura-container" id="sakuraContainer"></div>
+
+  <!-- ヘッダー -->
+  <header class="page-header fade-in">
+    <div class="page-header__badge">🌸 2026年度</div>
+    <h1 class="page-header__title">合格おめでとう！🎉<br>体験記投稿フォーム</h1>
+    <p class="page-header__subtitle">あなたの合格ストーリーを後輩たちに届けよう</p>
+  </header>
+
+  <!-- メインフォーム -->
+  <main class="main-container">
+
+    <!-- 教室長からのメッセージ -->
+    <section class="director-message glass-card fade-in">
+      <div class="director-message__inner">
+        <div class="director-message__avatar">
+          <img src="Gemini_Generated_Image_ba13piba13piba13.png" alt="教室長">
+        </div>
+        <div class="director-message__content">
+          <div class="director-message__label">🌸 教室長からのメッセージ</div>
+          <div class="director-message__text">
+            <p>合格、本当におめでとう。</p>
+            <p>あの日のため息も、眠い目をこすりながら机に向かった夜も、全部この瞬間につながっていましたね。</p>
+            <p>合格は"終わり"じゃなくて、"ここから先も頑張れる自分"を証明する通過点です。</p>
+            <p>うまくいかない日もあったと思います。でもそのたびに立ち上がって、自分に勝ってきたあなたを、私たちはちゃんと見ていました。</p>
+            <p>これからの道でも、どうか努力することを怖がらずに。結果よりも、「自分を信じて続けられる力」を大切にしてほしいです。</p>
+            <p><strong>胸を張って、一歩前へ。</strong></p>
+            <p><strong>本当に、おめでとう。</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <form id="storyForm" class="glass-card fade-in" novalidate>
+
+      <!-- 基本情報 -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="initials">
+            <span class="form-label__icon">✏️</span>
+            イニシャル
+            <span class="form-label__required">必須</span>
+          </label>
+          <input type="text" class="form-input" id="initials" placeholder="例：T.K." maxlength="10" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="examType">
+            <span class="form-label__icon">🎓</span>
+            受験区分
+            <span class="form-label__required">必須</span>
+          </label>
+          <select class="form-select" id="examType" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="highschool">高校受験</option>
+            <option value="university">大学受験</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="year">
+            <span class="form-label__icon">📅</span>
+            受験年度
+            <span class="form-label__required">必須</span>
+          </label>
+          <select class="form-select" id="year" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="2026">2026年度</option>
+            <option value="2025">2025年度</option>
+            <option value="2024">2024年度</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="school">
+            <span class="form-label__icon">🏫</span>
+            合格校名
+            <span class="form-label__required">必須</span>
+          </label>
+          <input type="text" class="form-input" id="school" placeholder="例：〇〇高等学校" required>
+        </div>
+      </div>
+
+      <!-- 体験記セクション -->
+      <div class="section-divider">
+        <span class="section-divider__line"></span>
+        <span class="section-divider__icon">📝</span>
+        <span class="section-divider__line"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="struggle">
+          <span class="form-label__icon">😣</span>
+          通塾するまで悩んでいたこと
+          <span class="form-label__required">必須</span>
+        </label>
+        <textarea class="form-textarea" id="struggle" placeholder="例：英語の長文読解が苦手で、模試の点数がなかなか伸びず、どう勉強すればいいか分かりませんでした。自分ひとりで勉強するのが不安で..." required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="growth">
+          <span class="form-label__icon">🌱</span>
+          ここに通ってできるようになったこと
+          <span class="form-label__required">必須</span>
+        </label>
+        <textarea class="form-textarea" id="growth" placeholder="例：先生に自分専用の学習計画を立ててもらい、毎日少しずつ確実に力がつきました。苦手だった長文も、読み方のコツを教わってからスラスラ読めるようになりました！" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">
+          <span class="form-label__icon">💌</span>
+          講師／教室へ一言
+          <span class="form-label__required">必須</span>
+        </label>
+        <textarea class="form-textarea" id="message" placeholder="例：いつも丁寧に教えてくださりありがとうございました！分からないところを何度質問しても優しく解説してくださって、本当に心強かったです。" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="summary">
+          <span class="form-label__icon">🌟</span>
+          まとめの感想
+          <span class="form-label__required">必須</span>
+        </label>
+        <textarea class="form-textarea" id="summary" placeholder="受験を振り返っての感想や、後輩へのアドバイスなどを自由にお書きください。"></textarea>
+      </div>
+
+      <!-- おすすめ度 -->
+      <div class="section-divider">
+        <span class="section-divider__line"></span>
+        <span class="section-divider__icon">⭐</span>
+        <span class="section-divider__line"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          <span class="form-label__icon">⭐</span>
+          当塾のおすすめ度
+          <span class="form-label__required">必須</span>
+        </label>
+        <div class="star-rating" id="starRating">
+          <input type="radio" name="rating" id="star5" value="5"><label for="star5" title="5 - 最高！"></label>
+          <input type="radio" name="rating" id="star4" value="4"><label for="star4" title="4 - とても良い"></label>
+          <input type="radio" name="rating" id="star3" value="3"><label for="star3" title="3 - 良い"></label>
+          <input type="radio" name="rating" id="star2" value="2"><label for="star2" title="2 - まあまあ"></label>
+          <input type="radio" name="rating" id="star1" value="1"><label for="star1" title="1 - 普通"></label>
+        </div>
+      </div>
+
+      <!-- 保護者メッセージ -->
+      <div class="section-divider">
+        <span class="section-divider__line"></span>
+        <span class="section-divider__icon">👨‍👩‍👧</span>
+        <span class="section-divider__line"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="parentMessage">
+          <span class="form-label__icon">💐</span>
+          保護者からのメッセージ
+          <span class="form-label__optional">任意</span>
+        </label>
+        <textarea class="form-textarea" id="parentMessage" placeholder="例：最後まで諦めずに頑張った我が子を誇りに思います。先生方の温かいご指導に心から感謝しています。"></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <span>🎊</span>
+        <span>投稿する</span>
+      </button>
+
+    </form>
+  </main>
+
+  <!-- 投稿完了モーダル -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-content">
+      <div class="modal-content__emoji">🎉</div>
+      <h2 class="modal-content__title">投稿ありがとうございます！</h2>
+      <p class="modal-content__text">
+        あなたの合格体験記が送信されました。<br>
+        後輩たちの大きな励みになります！<br>
+        改めて、合格おめでとうございます！🌸
+      </p>
+      <button class="btn-modal-close" id="modalCloseBtn">
+        <span>✨</span>
+        <span>閉じる</span>
+      </button>
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <p>© 2026 合格おめでとう掲示板</p>
+  </footer>
+
+  <script src="submit.js"></script>
+</body>
+</html>
