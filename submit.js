@@ -89,6 +89,19 @@ async function handleSubmit(e) {
     return;
   }
 
+  // 同意チェック
+  const consentCheck = document.getElementById('consentCheck');
+  if (!consentCheck.checked) {
+    consentCheck.parentElement.parentElement.style.borderColor = '#dc3545';
+    consentCheck.parentElement.parentElement.style.boxShadow = '0 0 0 4px rgba(220, 53, 69, 0.15)';
+    consentCheck.focus();
+    setTimeout(() => {
+      consentCheck.parentElement.parentElement.style.borderColor = '';
+      consentCheck.parentElement.parentElement.style.boxShadow = '';
+    }, 2000);
+    return;
+  }
+
   // データオブジェクト構築
   const story = {
     initials: fields.initials,
